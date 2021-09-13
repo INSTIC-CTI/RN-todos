@@ -12,7 +12,7 @@ const Todo = ({ todo, toggleComplete, deleteTodo }) => (
         complete={todo.complete}
         onPress={() => toggleComplete(todo.todoIndex)}
       />
-      <TodoButton name="Delete" onPress={() => toggleDelete(todo.todoIndex)} />
+      <TodoButton name="Delete" onPress={() => deleteTodo(todo.todoIndex)} />
     </View>
   </View>
 );
