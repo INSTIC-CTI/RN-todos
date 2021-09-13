@@ -5,6 +5,7 @@ import { StyleSheet, ScrollView, View } from "react-native";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
 import Button from "./components/Button";
+import TodoList from "./components/TodoList";
 
 let todoIndex = 0;
 
@@ -39,7 +40,7 @@ class App extends Component {
   }
 
   render() {
-    const { inputValue } = this.state;
+    const { inputValue,todos } = this.state;
     return (
       <View style={styles.container}>
         <ScrollView keyboardShouldPersistTaps="always" style={styles.content}>
@@ -48,6 +49,7 @@ class App extends Component {
             inputValue={inputValue}
             inputChange={(text) => this.inputChange(text)}
           />
+          <TodoList todos={todos}/>
           <Button submitTodo={this.submitTodo} />
         </ScrollView>
         <StatusBar style="auto" />
